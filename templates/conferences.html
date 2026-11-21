@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}Conferences | ConfPlan{% endblock %}
+{% block content %}
+<div class="page-heading"><div><span class="eyebrow">EVENT DIRECTORY</span><h1>Conferences</h1><p>Browse events and explore their sessions.</p></div>{% if session.get('role')=='admin' %}<a class="btn primary" href="{{ url_for('add_conference') }}">＋ Add conference</a>{% endif %}</div>
+<div class="card-grid">{% for c in conferences %}<article class="event-card"><div class="event-icon">✦</div><span class="date-tag">{{ c.event_date }}</span><h3>{{ c.title }}</h3><p>{{ c.description or 'Conference sessions and activities.' }}</p><div class="card-meta">⌖ {{ c.venue }} · {{ c.session_count }} sessions</div><a class="text-link" href="{{ url_for('conference_detail', conference_id=c.id) }}">Explore sessions →</a></article>{% else %}<div class="empty">No conferences available yet.</div>{% endfor %}</div>
+{% endblock %}

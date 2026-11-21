@@ -1,0 +1,2 @@
+{% extends "base.html" %}{% block title %}Add conference | ConfPlan{% endblock %}
+{% block content %}<div class="form-page"><form class="form-card wide" method="post"><span class="eyebrow">ADMIN · EVENT SETUP</span><h1>Create conference</h1><label>Conference title</label><input name="title" required><label>Description</label><textarea name="description" rows="4"></textarea><label>Venue</label><input name="venue" required><label>Event date</label><input type="date" name="event_date" required><button class="btn primary">Create conference</button></form></div>{% endblock %}
